@@ -1,7 +1,7 @@
 {
     "model_name": "Wav2vec2BiEncoder",
     "dataDir": {
-        "dir": "/notebooks/SpeakerProfiling",
+        "dir": ".",
         "data_path": "$dir/TIMIT_Dataset/wav_data/",
         "speaker_csv_path": "$dir/Dataset/data_info_height_age.csv"
     },
@@ -16,7 +16,8 @@
 	"narrow_band": false
     },
     "gpu": "-1",
-    "n_workers": "0"
+    "n_workers": "0",
+    "model_checkpoint": "model_checkpoint/epoch=24-step=12249.ckpt"
 }
 
 

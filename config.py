@@ -39,7 +39,7 @@ class TIMITConfig(object):
     n_workers = int(config['n_workers'])
 
     # model checkpoint to continue from
-    model_checkpoint = None
+    model_checkpoint = config['model_checkpoint']
     
     # LR of optimizer
     lr = float(config['model_parameters']['lr'])

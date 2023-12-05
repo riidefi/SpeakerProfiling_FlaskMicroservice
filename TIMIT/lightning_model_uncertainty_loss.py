@@ -3,9 +3,9 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 import pytorch_lightning as pl
-from pytorch_lightning.metrics.regression import MeanAbsoluteError as MAE
-from pytorch_lightning.metrics.regression import MeanSquaredError  as MSE
-from pytorch_lightning.metrics.classification import Accuracy
+from torchmetrics.regression import MeanAbsoluteError as MAE
+from torchmetrics.regression import MeanSquaredError  as MSE
+from torchmetrics.classification import Accuracy
 
 import pandas as pd
 import torch_optimizer as optim
@@ -27,7 +27,7 @@ class LightningModel(pl.LightningModule):
             
         self.mae_criterion = MAE()
         self.rmse_criterion = RMSELoss()
-        self.accuracy = Accuracy()
+        self.accuracy = Accuracy(task='binary')
 
         self.uncertainty_loss = UncertaintyLoss()
 
